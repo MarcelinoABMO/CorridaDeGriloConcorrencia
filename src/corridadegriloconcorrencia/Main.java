@@ -8,16 +8,32 @@ import java.util.Scanner;
  */
 public class Main {
     
+    public static class Equipe{
+        int id;
+        int distanciaPercorrida;
+        int totalPulos;
+    }
+    
+    private static Equipe[] equipes;
+    
     public static void main(String[] args) {
-        
         //pegando os inputs
-            //pegando a quantidade de grilos
+        //pegando a quantidade de grilos
         System.out.print("Quantos grilos devem correr? ");
         Scanner scan = new Scanner(System.in);
         int quantGrilos = scan.nextInt();
             //pegando a posição da linha de chegada
         System.out.print("Qual a distancia para a chegada? ");
         int distanciaTotal = scan.nextInt();
+        
+        final int grilosPorEquipe = 3;
+        int quantEquipes = quantGrilos/ grilosPorEquipe;
+        equipes = new Equipe[quantEquipes];
+             
+        for(int i = 0; i < quantEquipes; i++){
+            equipes[i] = new Equipe();
+            equipes[i].id = i;
+        }
         
         //instanciando os grilos e armazenando em um array
         Grilo[] grilos = new Grilo[quantGrilos];
