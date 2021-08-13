@@ -27,7 +27,7 @@ public class Main {
         int distanciaTotal = scan.nextInt();
         
         final int grilosPorEquipe = 3;
-        int quantEquipes = quantGrilos/ grilosPorEquipe;
+        int quantEquipes = quantGrilos / grilosPorEquipe;
         equipes = new Equipe[quantEquipes];
              
         for(int i = 0; i < quantEquipes; i++){
@@ -57,11 +57,32 @@ public class Main {
         }
         
         //imprimindo o resultado final
-        System.out.println("\nResultado Final:");
         for (int i = 0; i < quantGrilos; i++)
-        {
-            System.out.println("O Grilo_" + (i+1) + " percorreu um total de " +
-                    grilos[i].getPosicao() + "cm com " + grilos[i].getPulos() );
-        }
+		{
+			idEquipe = grilo[i].id;
+			equipe [idEquipe].distanciaPercorrida += grilo[i].getPosicao();
+			equipe [idEquipe].totalPulos += grilo[i].getPulos();
+		}
+		
+		for (int i = 0; i < quantGrilos; i++)
+		{
+			idEquipe = grilo[i].id;
+			equipe[idEquipe].distanciaPercorrida += grilo[i].getPosicao();
+			equipe[idEquipe].totalPulos += grilo[i].getPulos();
+		}
+		
+		for (int i = 0; i < quantEquipes; i++)
+		{
+			System.out.println(“Time “ + (i + 1) + “: Total de Pulos: “ + equipe[i].totalPulos + “ 
+			- Distancia Percorrida: “ + equipe[i].distanciaPercorrida);
+		}
+		
+		int equipeVencedora;
+		for (int i = 0; i < quantGrilos; i++) {
+			if (grilo.posicaoChegada == 1)
+				equipeVencedora = equipes[ grilo[i].idEquipe ]
+		}
+		
+		System.out.println(“Time “ + equipeVencedora + “ foi o vencedor.”);
     }
 }
