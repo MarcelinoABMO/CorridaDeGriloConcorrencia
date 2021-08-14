@@ -1,6 +1,9 @@
 package corridadegriloconcorrencia;
 
 import java.util.Scanner;
+import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,11 +38,14 @@ public class Main {
             equipes[i].id = i;
         }
         
+        //semaforo único passado a todas as instancias de grilos para sincronizá-los.
+        Semaphore semaphore = new Semaphore(1);
+        
         //instanciando os grilos e armazenando em um array
         Grilo[] grilos = new Grilo[quantGrilos];
         for (int i = 0; i < quantGrilos; i++)
         {
-            grilos[i] = new Grilo((i+1), distanciaTotal);
+            grilos[i] = new Grilo((i+1), distanciaTotal, (i % quantEquipes), semaphore);
         }
         
         //executando as threads
@@ -52,37 +58,31 @@ public class Main {
             try {
                 g.join();
             } catch (InterruptedException ex) {
-                System.out.println("Deu merda no join das threads.");
+                Logger.getLogger(Grilo.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
         //imprimindo o resultado final
+        System.out.println("\nResultado Final:");
         for (int i = 0; i < quantGrilos; i++)
-		{
-			idEquipe = grilo[i].id;
-			equipe [idEquipe].distanciaPercorrida += grilo[i].getPosicao();
-			equipe [idEquipe].totalPulos += grilo[i].getPulos();
-		}
-		
-		for (int i = 0; i < quantGrilos; i++)
-		{
-			idEquipe = grilo[i].id;
-			equipe[idEquipe].distanciaPercorrida += grilo[i].getPosicao();
-			equipe[idEquipe].totalPulos += grilo[i].getPulos();
-		}
-		
-		for (int i = 0; i < quantEquipes; i++)
-		{
-			System.out.println(“Time “ + (i + 1) + “: Total de Pulos: “ + equipe[i].totalPulos + “ 
-			- Distancia Percorrida: “ + equipe[i].distanciaPercorrida);
-		}
-		
-		int equipeVencedora;
-		for (int i = 0; i < quantGrilos; i++) {
-			if (grilo.posicaoChegada == 1)
-				equipeVencedora = equipes[ grilo[i].idEquipe ]
-		}
-		
-		System.out.println(“Time “ + equipeVencedora + “ foi o vencedor.”);
+        {
+            int idEquipe = grilos[i].getEquipe();
+            equipes[idEquipe].distanciaPercorrida += grilos[i].getPosicao();
+            equipes[idEquipe].totalPulos += grilos[i].getPulos();
+        }
+
+        for (int i = 0; i < quantEquipes; i++)
+        {
+            System.out.println("Time " + (i + 1) + ": Total de Pulos: " + equipes[i].totalPulos + 
+                    " - Distancia Percorrida: " + equipes[i].distanciaPercorrida);
+        }
+
+        int equipeVencedora = 0;
+        for (int i = 0; i < quantGrilos; i++) {
+            if (grilos[i].getPosicaoChegada() == 1)
+                equipeVencedora = grilos[i].getEquipe() + 1;
+        }
+
+        System.out.println("Time " + equipeVencedora + " foi o vencedor.");
     }
 }
