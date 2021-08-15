@@ -14,7 +14,7 @@
 <p>Este projeto foi desenvolvido como tarefa avaliativa da disciplina de Jogos para Console do Curso Superior de Tecnologia em Jogos Digitais ministrado no Instituto de Educação, Ciência e Tecnologia do Rio de Janeiro - IFRJ Campus Engenheiro Paulo de Frontin.</p>
 
 <h3 id="objetivo" align="center">Objetivo</h3>
-<p>O objetivo é simular uma corrida de "grilos", implementados como múltiplas threads executando em paralelo. Os grilos devem saltar repedidamente, através de um loop. Os saltos devem ter comprimento variável randomicamente. Uma linha de chegada é definida pelo usuário no início da aplicação, bem como o número de grilos/threads que participarão. Estes são agrupados em equipes de até 3 integrantes. A equipe vencedora é aquela cujo membro chegou primeiro. Para determinar quem chegou primeiro, é preciso utilizar um mecanismo de controle de concorrência entre as threads.</p>
+<p>O objetivo é simular uma corrida de "grilos", implementados como múltiplas threads executando em paralelo. Os grilos devem saltar uma distância randômica repedidamente até alcançar a linha de chegada. Esta é definida pelo usuário no início da aplicação, bem como o número de grilos/threads que participarão. Estes são agrupados em equipes de até 3 integrantes. A equipe vencedora é aquela cujo membro chegou primeiro. Para determinar quem chegou primeiro, é preciso utilizar um mecanismo de controle de concorrência entre as threads.</p>
 
 <h3 id="status" align="center">Status do Projeto</h3>
 <p>Funcional. Aguardando feedback do professor</p>
