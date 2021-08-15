@@ -1,4 +1,3 @@
-# CorridaDeGriloConcorrencia
 <h1 align="center">Corrida de Grilos Multi-thread com Concorrência</h1>
 <p align="center">Aplicação desenvolvida para testar processamento multi-thread com controle de concorrência</p>
 
@@ -6,12 +5,12 @@
 <p>
   <a href="#sobre">Sobre</a>
   <a href="#objetivo">Objetivo</a>
-  <a href="#status>Status do Projeto</a>
-  <a href="#demo>Demonstração</a>
-  <a href="#autores>Autores</a>
+  <a href="#status">Status do Projeto</a>
+  <a href="#demo">Demonstração</a>
+  <a href="#autores">Autores</a>
 </p>
 
-<h3 id="sobre" align="center>Sobre</h3>
+<h3 id="sobre" align="center">Sobre</h3>
 <p>Este projeto foi desenvolvido como tarefa avaliativa da disciplina de Jogos para Console do Curso Superior de Tecnologia em Jogos Digitais ministrado no Instituto de Educação, Ciência e Tecnologia do Rio de Janeiro - IFRJ Campus Engenheiro Paulo de Frontin.</p>
 
 <h3 id="objetivo" align="center">Objetivo</h3>
@@ -21,7 +20,7 @@
 <p>Funcional. Aguardando feedback do professor</p>
 
 <h3 id="demo" align="center">Demonstração</h3>
-<p><a href="..."Vídeo de um minuto demonstrando o funcionamento da aplicação</a></p>
+<p><a href="./"Vídeo de um minuto demonstrando o funcionamento da aplicação</a></p>
 
 <h3 id="autores" align="center">Autores</h3>
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px">
