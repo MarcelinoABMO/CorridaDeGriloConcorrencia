@@ -29,8 +29,9 @@ public class Main {
         System.out.print("Qual a distancia para a chegada? ");
         int distanciaTotal = scan.nextInt();
         
+        //gera equipes para agrupar os grilos
         final int grilosPorEquipe = 3;
-        int quantEquipes = quantGrilos / grilosPorEquipe;
+        int quantEquipes = (quantGrilos / grilosPorEquipe) + (quantGrilos % grilosPorEquipe);
         equipes = new Equipe[quantEquipes];
              
         for(int i = 0; i < quantEquipes; i++){
