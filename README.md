@@ -20,7 +20,7 @@
 <p>Funcional. Aguardando feedback do professor</p>
 
 <h3 id="demo" align="center">Demonstração</h3>
-<p><a href="./">Vídeo de um minuto demonstrando o funcionamento da aplicação</a></p>
+<p><a href="https://youtu.be/j_Ugrs2ldGk">Vídeo de um minuto demonstrando o funcionamento da aplicação</a></p>
 
 <h3 id="autores" align="center">Autores</h3>
 <table align="center">
